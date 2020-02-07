@@ -1,0 +1,102 @@
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="/static/css/custom.css">
+	<link rel="stylesheet" href="/static/css/normalize.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+	<link rel="stylesheet" href="normalize.css">
+
+	<link rel="stylesheet" href="custom.css">
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>Document</title>
+
+</head>
+
+<body>  
+
+
+
+
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo center">foodie</a>
+      <ul class="left hide-on-med-and-down">
+
+        <li class="we/"><a href="we/">About Us</a></li>
+		<li class="logout"> <a href="logout/">Logout</a></li>
+
+
+
+      </ul>
+    </div>
+    </nav>
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <script>M.toast({html: "Register Sucessfully", classes:"blue rounded", displayLength:3000});</script>
+        {% elif message.tags == 'info' %}
+            <script>M.toast({html: "Login Sucessfully!!Welcome To The Food You Love", classes:"blue rounded", displayLength:3000});</script>
+        {% elif message.tags == 'warinig' %}
+            <script>M.toast({html: "warning!", classes:"blue rounded", displayLength:3000});</script>
+        {% elif message.tags == 'error' %}
+            <script>M.toast({html: "OOps error found", classes:"blue rounded", displayLength:3000});</script>
+            {% endif %}
+    {% endfor %}
+
+{% endif %}
+
+
+	<section class="hero_image">
+
+		<div class="hero_wrapper">
+
+			<h1>THE FOOD YOU LOVE</h1>
+
+			<p>Good Friends, Good Food, Good Times.</p>
+
+ 			<form action="vishal/">
+				<button type="submit" >VISHAL RESTAURANT</button>
+			</form>
+
+ 			<form action="sharma/">
+				<button type="submit">SHARMA RESTAURANT</button>
+			</form>
+
+
+ 			<form action="badshah/">
+				<button type="submit">BADSHAH CAFE</button>
+			</form>
+
+ 			<form action="peerpal/">
+				<button type="submit">PEERPAL CAFE</button>
+			</form>
+
+
+		</div>
+
+	</section>
+
+
+
+
+
+
+</body>
+
+</html>

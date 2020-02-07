@@ -1,0 +1,39 @@
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="/static/css/custom.css">
+	<link rel="stylesheet" href="/static/css/normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <script>M.toast({html: " Login Sucessfully", classes:"blue rounded", displayLength:3000});</script>
+        {% elif message.tags == 'info' %}
+            <script>M.toast({html: "Welcome To The FooD You LOve", classes:"blue rounded", displayLength:3000});</script>
+        {% elif message.tags == 'warinig' %}
+            <script>M.toast({html: "warning!", classes:"blue rounded", displayLength:3000});</script>
+        {% elif message.tags == 'error' %}
+            <script>M.toast({html: "oops... Error Occured", classes:"blue rounded", displayLength:3000});</script>
+            {% endif %}
+    {% endfor %}
+
+{% endif %}
+
+
+
+  <div class="container">
+      {% block content %}
+      <form method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <button class="btn" type="submit">LOGIN</button>
+  </form>
+      if you dont have an account,<a href="/register"><strong>REGISTER</strong></a> for one.
+      {% endblock %}
+      </div>
+
+
+
